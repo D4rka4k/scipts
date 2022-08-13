@@ -1,1 +1,5 @@
-loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
+if game.PlaceId == 155615604 then
+loadstring(game:HttpGet'https://raw.githubusercontent.com/D4rka4k/scipts/main/Script%20hub%20.lua')()
+
+if game.PlaceId == 5490351219
+loadstring(game:HttpGet'https://raw.githubusercontent.com/D4rka4k/scipts/main/clicker.lua')()
