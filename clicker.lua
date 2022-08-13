@@ -3,12 +3,17 @@ if game.PlaceId == 5490351219 then
     getgenv().autotap = false;
     getgenv().autorebirth = false;
     getgenv().autohatch = false;
-
+    rebirthtimes = 10
+    hatchnumber = (2)
+    hatchtype =('lava')
+end
+    -- UI THEMES
     local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 
     local w = library:CreateWindow("A") -- Creates the window
 
         local b = w:CreateFolder("B") -- Creates the folder(U will put here your buttons,etc)
+    --FUNCTION IG(CLICKING REBIRTH HATCH)
 
         b:Label("Clicker",{
             TextSize = 25; -- Self Explaining
@@ -29,7 +34,7 @@ if game.PlaceId == 5490351219 then
             getgenv().autorebirth = bool
             print("Rebirth  ", bool);
             if bool then
-                Autorebirths(1000);
+                Autorebirths(rebirthtimes);
             end
         end)
 
@@ -38,11 +43,11 @@ if game.PlaceId == 5490351219 then
             getgenv().autohatch = bool
             print("Rebirth  ", bool);
             if bool then
-                buyegg('basic', 5);
+                buyegg( hatchtype, hatchnumber);
             end
         end)
 
-
+        --VARIABLES AND FUNCTIONS 
         function dotap()
             spawn (function()
                 while autotap == true do
@@ -63,8 +68,6 @@ if game.PlaceId == 5490351219 then
                     end
                 end)
             end
-            
-            Autorebirths(10)
 
         b:DestroyGui()
 
@@ -82,24 +85,27 @@ if game.PlaceId == 5490351219 then
         buyegg("basic", 5);
 
         function getlocation()
-        local player = game.Players.LocalPlayer;
-        if player.Character then
-                return player.Character.HumanoidRootPart.Position;
-        end
-            return false;
+            local player = game.Players.LocalPlayer;
+                if player.Character then
+                    return player.Character.HumanoidRootPart.Position;
     end
+
+
+        return false;
+    end
+
+    --TELEPORT SCRIPTS
 
     function teleport(placeCFrame)
-    local player = game.Players.LocalPlayer;
-        if player.Character then
-            player.Character.HumanoidRootPart.CFrame = placeCFrame;
-        end
-        end
-
-        function teleportWorld(world)
-            if game:GetService("Workspace").Worlds:FindFirstChild(world) then
-                teleport(game:GetService("Workspace").Worlds[world].Teleport.CFrame)
+        local player = game.Players.LocalPlayer;
+                if player.Character then
+                    player.Character.HumanoidRootPart.CFrame = placeCFrame;
             end
         end
-        teleportWorld("Desert")
-    end
+            function teleportWorld(world)
+                if game:GetService("Workspace").Worlds:FindFirstChild(world) then
+                    teleport(game:GetService("Workspace").Worlds[world].Teleport.CFrame)
+            end
+        end
+
+    teleportWorld("Desert")
