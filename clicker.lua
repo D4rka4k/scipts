@@ -4,15 +4,16 @@ if game.PlaceId == 5490351219 then
     getgenv().autorebirth = false;
     getgenv().autohatch = false;
     rebirthtimes = 10
-    hatchnumber = (2)
-    hatchtype =('lava')
-end
+    hatchtype = ('lava')
+    teleportplace = ('Fire')
     -- UI THEMES
     local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 
-    local w = library:CreateWindow("A") -- Creates the window
+    local w = library:CreateWindow("Clicker") -- Creates the window
+    local b = w:CreateFolder("Main Farming")
+    local a = w:CreateFolder("Teleports")
 
-        local b = w:CreateFolder("B") -- Creates the folder(U will put here your buttons,etc)
+    -- Creates the folder(U will put here your buttons,etc)
     --FUNCTION IG(CLICKING REBIRTH HATCH)
 
         b:Label("Clicker",{
@@ -43,9 +44,81 @@ end
             getgenv().autohatch = bool
             print("Rebirth  ", bool);
             if bool then
-                buyegg( hatchtype, hatchnumber);
+                buyegg(hatchinfo);
             end
         end)
+
+        a:Button("Desert",function()
+            teleportWorld("Desert")
+        end)
+
+        a:Button("Winter",function()
+            teleportWorld("Winter")
+        end)
+
+        a:Button("Lava",function()
+            teleportWorld("Lava")
+        end)
+
+        a:Button("Toxic",function()
+            teleportWorld("Toxic")
+        end)
+
+        a:Button("Ocean",function()
+            teleportWorld("Ocean")
+        end)
+
+        a:Button("Candy",function()
+            teleportWorld("Candy")
+        end)
+
+        a:Button("Space",function()
+            teleportWorld("Space")
+        end)
+
+        a:Button("Forest",function()
+            teleportWorld("Forest")
+        end)
+
+        a:Button("City",function()
+            teleportWorld("City")
+        end)
+
+        a:Button("Blocks",function()
+            teleportWorld("Blocks")
+        end)
+
+        a:Button("Future",function()
+            teleportWorld("Future")
+        end)
+
+        a:Button("Infinity",function()
+            teleportWorld("Infinity")
+        end)
+
+        a:Button("Moon",function()
+            teleportWorld("Moon")
+        end)
+
+        a:Button("Fire",function()
+            teleportWorld("Fire")
+        end)
+
+        a:Button("Dominus",function()
+            teleportWorld("Dominus")
+        end)
+
+        a:Button("Storm",function()
+            teleportWorld("Storm")
+        end)
+
+
+
+
+
+
+
+
 
         --VARIABLES AND FUNCTIONS 
         function dotap()
@@ -107,5 +180,4 @@ end
                     teleport(game:GetService("Workspace").Worlds[world].Teleport.CFrame)
             end
         end
-
-    teleportWorld("Desert")
+    end
